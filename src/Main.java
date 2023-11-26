@@ -10,7 +10,6 @@ public class Main {
         Quiz quiz = new Quiz();
 
         quiz.greetThePlayer();
-
         while(quiz.startQuiz) {
             quiz.printQuestion();
             quiz.printPossibilities();
@@ -21,9 +20,8 @@ public class Main {
                 quiz.printResult();
                 System.out.println("Do you wanna to solve another quiz? (y/n)");
                 quiz.startQuiz(input.readLine());
+                quiz.greetThePlayer();
             }
         }
-
-
     }
 }
