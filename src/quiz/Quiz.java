@@ -1,5 +1,6 @@
 package quiz;
 
+import java.lang.invoke.WrongMethodTypeException;
 import java.util.InputMismatchException;
 
 public class Quiz {
@@ -87,6 +88,7 @@ public class Quiz {
             startQuiz = true;
         } else {
             startQuiz = false;
+            System.exit(0);
         }
         return startQuiz;
     }
@@ -95,9 +97,9 @@ public class Quiz {
         System.out.println("Welcome to our quiz!");
         System.out.println("Choose one of these quizzes: (1 - Geography 2 - Mathematics 3 - Informatics) and good luck!");
         try {
-            quizNumber = input.keyInput.nextInt();
-        } catch (InputMismatchException e) {
-            e.getMessage();
+            quizNumber = input.readQuiz();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         startQuiz("y");
     }
